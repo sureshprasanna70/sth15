@@ -38,3 +38,4 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem 'devise'
+gem 'twitter-bootstrap-rails', '~> 3.2.0'
