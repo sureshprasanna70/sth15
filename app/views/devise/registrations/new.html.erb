@@ -2,6 +2,22 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name%>
+  </div>
+  <div class="field">
+    <%= f.label :college %><br />
+    <%= f.text_field :college%>
+  </div>
+  <div class="field">
+    <%= f.label :department %><br />
+    <%= f.text_field :department %>
+  </div>
+  <div class="field">
+    <%= f.label :year %><br />
+    <%= f.text_field :year %>
+  </div>
 
   <div class="field">
     <%= f.label :email %><br />
@@ -19,22 +35,6 @@
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name%>
-  </div>
-  <div class="field">
-    <%= f.label :college %><br />
-    <%= f.text_field :college%>
-  </div>
-  <div class="field">
-    <%= f.label :department %><br />
-    <%= f.text_field :department %>
-  </div>
-  <div class="field">
-    <%= f.label :year %><br />
-    <%= f.text_field :year %>
   </div>
 
   <div class="actions">

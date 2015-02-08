@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Vision</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+<title>Vision</title>
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<%= csrf_meta_tags %>
 </head>
 <body>
-<%= link_to('Logout', destroy_user_session_path, :method => :delete,:class=>"link") %>
+<% flash.each do |key, value| %>
+
+  <% if key=="alert" %>
+    <%= content_tag(:div, value, :class => "alert alert-danger") %>
+  <%elsif key=="notice"%>
+    <%= content_tag(:div, value, :class => "alert alert-success") %>
+
+  <%end%> 
+
+<% end %>
+
+<%if user_signed_in?%>
+  <%= link_to('Logout', destroy_user_session_path, :method => :delete,:class=>"link") %>
+<%else%>
+  <%=link_to 'Login',new_user_session_path%>
+<%end%>
 <%= yield %>
 
 </body>
