@@ -7,9 +7,15 @@ unless defined?(Spring)
   require "rubygems"
   require "bundler"
 
+<<<<<<< HEAD
   if match = Bundler.default_lockfile.read.match(/^GEM$.*?^    (?:  )*spring \((.*?)\)$.*?^$/m)
     ENV["GEM_PATH"] = ([Bundler.bundle_path.to_s] + Gem.path).join(File::PATH_SEPARATOR)
     ENV["GEM_HOME"] = nil
+=======
+  if match = Bundler.default_lockfile.read.match(/^GEM$.*?^    spring \((.*?)\)$.*?^$/m)
+    ENV["GEM_PATH"] = ([Bundler.bundle_path.to_s] + Gem.path).join(File::PATH_SEPARATOR)
+    ENV["GEM_HOME"] = ""
+>>>>>>> c919cddc801cda0445392fd75877d346c38fb89d
     Gem.paths = ENV
 
     gem "spring", match[1]
