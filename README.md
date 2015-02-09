@@ -15,7 +15,7 @@ Production mode.
 Because it addresses these databases based on [OpenShift Environment
 Variables](http://red.ht/NvNoXC), you will need to change these if you
 want to use your application in Production mode outside of
-OpenShift.
+O
 
 By default the development and test environment is configured to use
 the sqlite3 database adapter.
