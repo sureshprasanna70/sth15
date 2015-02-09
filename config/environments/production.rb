@@ -81,10 +81,10 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   config.action_mailer.default_url_options = {:host => "login.vision2015.in"}
-  config.action_mailer.smtp_settings = { :address => "mail.vision2015.in", 
-                                         :port =>26,
-                                         :user_name=>"noreply@vision2015.in",
-                                         :password=>"n13a}qXT-Lg!",
+  config.action_mailer.smtp_settings = { :address => "smtp.mandrillapp.com", 
+                                         :port =>587,
+                                         :user_name=>"sureshprasanna70@gmail.com",
+                                         :password=>"N5fI_ASYdNc4_nQx3zbdMw",
                                          :enable_starttls_auto=>false,
                                          :authentication=>"plain"
   }
