@@ -5,7 +5,7 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: mysql
+  adapter: mysql2
   username: root
   password: 123456
 
@@ -21,9 +21,9 @@ test:
   database: test_appathon
 
 production:
-  adapter: postgresql
-  host: ec2-54-197-237-231.compute-1.amazonaws.com
-  username: "glydmeukiuaveu"
-  password: "d07HFLmHWHVvrb-b1R5UoA15g6"
-  database: d12lag7dg51mjb
-  port:   5432
+  adapter: mysql2
+  host: <%=ENV['OPENSHIFT_MYSQL_DB_HOST']%>
+  username: <%=ENV['OPENSHIFT_MYSQL_DB_USERNAME']%>
+  password: <%=ENV['OPENSHIFT_MYSQL_DB_PASSWORD']%>
+  database: <%=ENV['OPENSHIFT_APP_NAME']%>
+  port:   <%=ENV['OPENSHIFT_MYSQL_DB_PORT']%>
