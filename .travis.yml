@@ -1,0 +1,9 @@
+deploy:
+  provider: openshift
+  user: sureshprasanna70@gmail.com
+  password:
+    secure: XyY/Gvkr44aEaJkvpio1kcTc7xVVHLx0sNDN/tcWw65l9OHExt61tyLxm3Djx/n6U6AHNdHmNZABAD2KtVWLSOuN8os7bs3f1NDryWYntAvYr3iwxvYktbphv8GtkM5sirvZE4GrnZPCTb4wtFFdRm8/UN2aMh+NqPgtkcp0A3Y=
+  app: ruby
+  domain: sureshceg
+  on:
+    repo: sureshprasanna70/vision
