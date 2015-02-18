@@ -45,8 +45,9 @@
         <div class="col-lg-9">
               <%= bootstrap_flash %>
           <%if user_signed_in?%>
-            <%= link_to('Logout', destroy_user_session_path, :method => :delete,:class=>"link",:class=>"btn btn-danger") %>      
+            <%= link_to('Logout', destroy_user_session_path, :method => :delete,:class=>"btn btn-danger pull-right") %>      
           <%end%>
+          <br>
           <%= yield %>
         </div>
         
