@@ -23,7 +23,6 @@ class SessionsController < Devise::SessionsController
         return
         end
         invalid_login_attempt
-      end
         # build_resource  # <-This line is evidently producing an error!
         # user = User.find_for_database_authentication(:email => params[:user][:email])
         # return invalid_login_attempt unless resource
