@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   validates :department,presence:true
   validates :name,presence:true
   validates :year,presence:true
+  validates :phone,presence:true,numericality:true
   devise :database_authenticatable, :registerable,:confirmable,
          :recoverable, :rememberable, :trackable, :validatable
 end
