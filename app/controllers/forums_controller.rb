@@ -5,6 +5,7 @@ class ForumsController < ApplicationController
 
   def index
     @forums = current_user.forums
+    @forums_count=User.count
     respond_with(@forums)
   end
 

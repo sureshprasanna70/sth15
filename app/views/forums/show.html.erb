@@ -1,19 +1,25 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
-  <%= @forum.title %>
+<strong>Title:</strong>
+<%= @forum.title %>
 </p>
 
 <p>
-  <strong>Content:</strong>
-  <%= @forum.content %>
+<strong>Content:</strong>
+<%= @forum.content %>
 </p>
 
 <p>
-  <strong>Tags:</strong>
-  <%= @forum.tags %>
+<strong>Tags:</strong>
+<%= @forum.tags %>
 </p>
+
+    <% if current_user %>
+      <%= rating_for @forum, "contents" %>
+      <br>
+    <% end %>
+<br>
 
 
 <%= link_to 'Edit', edit_forum_path(@forum) %> |
