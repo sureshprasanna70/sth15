@@ -1881,7 +1881,6 @@ body
   line-height: 1.42857143;
   color: #333;
   background-color: #fff;
-  overflow-x: hidden;
 }
 
 
@@ -2228,7 +2227,7 @@ p.change_link{
 }
 #register{  
   z-index: 21;
-  opacity: 1;
+  opacity: 0;
 }
 #login{
   z-index: 22;
@@ -2489,28 +2488,26 @@ p.change_link{
   border: 1px solid #d8d8d8;
   box-shadow: 0px 0px 5px 3px rgba(51,51,51,0.5);
   margin: 2em 6em;
-  max-height: 17em;
+  
   height: auto;
   overflow: hidden;
   cursor: pointer;
 }
 
-.feed:after
+.feed.normal
 {
-  content: '';
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 50px;
-  overflow: hidden;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 8px 0 -3px #f6f6f6, 0 9px 1px -3px rgba(0, 0, 0, 0.2), 0 16px 0 -6px #f6f6f6, 0 17px 2px -6px rgba(0, 0, 0, 0.2);
+  max-height: 17em;
 }
 
 .articleTitle
 {
     font-size: 2em;
   text-shadow: 0 0 1px rgba(0,0,0,0.5);
+}
+
+.articleTitle:hover
+{
+   text-shadow: none;
 }
 
 .datePosted
@@ -2524,19 +2521,61 @@ p.change_link{
   font-size: 1.2em;
 }
 
-.starRatings
+.starRatings,.starRatingsGot
 {
     margin: 1em 0;
 }
 
-.starRatings span
+.starRatings span,.starRatingsGot span
 {
 font-size: 2em;
   padding-right: .5em;
 }
 
-.starRatings span ~ a span
+.starRatings span ~ a span,.starRatingsGot span ~ a span
 {
     font-size: 1.5em;
     color:#777;
+}
+
+
+.comment
+{
+  color: #363636;
+  font-size:1.5em;
+}
+
+.glyphicon-star.blueStar
+{
+  color: #009933;
+}
+
+.feedback button
+{
+  margin-top:1em;
+}
+
+.postEntry
+{
+  margin: 2em auto;
+  border: 1px solid #d8d8d8;
+  padding: 2em;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 4px rgba(0,0,0,0.5);
+  }
+
+.postEntry label
+
+{
+  font-size: 1.5em;
+}
+
+.postEntry input[type='text']
+{
+  font-size: 18px;
+}
+
+.postEntry button
+{
+  margin-top:1em;
 }

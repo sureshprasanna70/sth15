@@ -13,4 +13,42 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.turbolinks
+//= require turbolinks
 //= require_tree .
+$(document).ready(function(){
+
+
+	$('.feed').click(function(){
+
+		$(this).toggleClass('normal');
+		var pos=$(this).offset().top;
+		$(document).scrollTop(pos);
+
+	})
+
+	$('.starRatings a').click(function(event){
+
+
+		event.stopPropagation();
+
+
+		$(this).find('span').removeClass('glyphicon-star-empty').end();
+		$(this).find('span').addClass('glyphicon-star blueStar').end();      
+		$(this).prevAll('a').find('span').removeClass('glyphicon-star-empty').end().end();
+
+		$(this).prevAll('a').find('span').addClass('glyphicon-star blueStar').end().end();
+
+
+
+
+
+	})
+
+	$('.feed textarea').click(function(event){
+
+		event.stopPropagation();
+
+	})
+
+});
+

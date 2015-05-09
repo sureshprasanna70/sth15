@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   skip_before_action :verify_authenticity_token, :if => :json_request?
   respond_to :html, :json
+  helper :all
   def json_request?
         request.format.json?
   end
