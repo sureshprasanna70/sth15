@@ -1,3 +1,5 @@
+<%=current_user.id%>
+
 <table>
   <thead>
     <tr>
@@ -14,7 +16,7 @@
       <td><%= forum.title %></td>
       <td><%= forum.content %></td>
       <td><%= forum.tags %></td>
-      <td><%= link_to 'Show', forum %></td>
+      <td><%= link_to 'Show', show_feed_path(forum) %></td>
       <td><%= link_to 'Edit', edit_forum_path(forum) %></td>
       <td><%= link_to 'Destroy', forum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>

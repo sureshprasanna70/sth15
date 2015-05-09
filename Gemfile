@@ -19,7 +19,9 @@ gem 'turbolinks'
 gem 'jquery-turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
-gem 'spring','~> 1.3.5',        group: :development
+gem 'spring','~> 1.3.6',        group: :development
 gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
 gem 'twitter-bootstrap-rails', '~> 3.2.0'
+gem 'redis', '2.1.1'
+gem 'composite_primary_keys','~> 7.0'

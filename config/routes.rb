@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   resources :mappings
   resources :forums
   get 'feed'=>"forums#selffeed",:as=>"feed"
+  get 'feed/:id'=>"forums#showfeed",:as=>"show_feed"
   root 'home#index'
-
+  get 'rater/:forum_id'=>"rater#rated_or_not",:as=>"rater_check"
    devise_for :users, controllers: {registrations: 'registrations'}
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

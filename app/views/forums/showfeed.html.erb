@@ -1,5 +1,4 @@
 <p id="notice"><%= notice %></p>
-
 <p>
 <strong>Title:</strong>
 <%= @forum.title %>
@@ -14,8 +13,8 @@
 <strong>Tags:</strong>
 <%= @forum.tags %>
 </p>
-<%if @show_value%>
-  <%= rating_for_user @forum,current_user, "contents",disable_after_rate: true,imdb_avg:true,stars:5,half_show: true %>
-<%end%>
+
+<%= rating_for @forum, "contents",imdb_avg:true,stars:5,half_show: true %>
+
 <%= link_to 'Edit', edit_forum_path(@forum) %> |
 <%= link_to 'Back', forums_path %>

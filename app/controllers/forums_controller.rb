@@ -1,5 +1,5 @@
 class ForumsController < ApplicationController
-  before_action :set_forum,only: [:show, :edit, :update, :destroy]
+  before_action :set_forum,only: [:show, :edit, :update, :destroy,:showfeed]
   before_filter :sign_in_check
   respond_to :html
   def index
@@ -7,12 +7,23 @@ class ForumsController < ApplicationController
     respond_with(@forums)
   end
   def selffeed
-    @mapping=current_user.mapping.pluck(:forum_id)
-    @forums = current_user.forums.where(:id=>@mapping)
+    @mapping=$redis.smembers(current_user.id)
+    @forums = Forum.where(:id=>@mapping)
     respond_with(@forums)
   end
-
+  def showfeed
+    respond_with(@forum)
+  end
   def show
+    @rateable=Rate.where(:rateable_id=>@forum_id).first
+    if not @rateable.nil?
+      if @rateable.stars
+        @show_value=true
+      end
+    else
+      @show_value=false
+    end
+
     respond_with(@forum)
   end
 
@@ -30,7 +41,7 @@ class ForumsController < ApplicationController
     user_count=User.count
     @forum.save
     puts @forum.id
-    HardWorker.perform_async(@forum.id, user_count)
+    HardWorker.perform_async(@forum.id, user_count,current_user_id)
     respond_with(@forum)
   end
 
@@ -49,11 +60,11 @@ class ForumsController < ApplicationController
     end
   end
   private
-    def set_forum
-      @forum = Forum.find(params[:id])
-    end
+  def set_forum
+    @forum = Forum.find(params[:id])
+  end
 
-    def forum_params
-      params.require(:forum).permit(:title, :content, :tags, :user_id)
-    end
+  def forum_params
+    params.require(:forum).permit(:title, :content, :tags, :user_id)
+  end
 end
