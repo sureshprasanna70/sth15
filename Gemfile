@@ -29,7 +29,7 @@ end
 group :production, :mysql do
   gem 'mysql2'
 end
-
+gem 'ratyrate'
 
 ### / OpenShift changes
 
@@ -52,7 +52,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring','~> 1.3.2',        group: :development
+gem 'spring','~> 1.3.5',        group: :development
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
