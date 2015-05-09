@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
   post '/rate' => 'rater#create', :as => 'rate'
   resources :mappings
-
   resources :forums
-
+  get 'feed'=>"forums#selffeed",:as=>"feed"
   root 'home#index'
 
    devise_for :users, controllers: {registrations: 'registrations'}

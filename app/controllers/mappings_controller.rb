@@ -42,6 +42,6 @@ class MappingsController < ApplicationController
     end
 
     def mapping_params
-      params.require(:mapping).permit(:user_id, :post_id)
+      params.require(:mapping).permit(:user_id, :forum_id)
     end
 end
