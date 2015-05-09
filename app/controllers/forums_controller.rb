@@ -4,7 +4,7 @@ class ForumsController < ApplicationController
   respond_to :html
 
   def index
-    @forums = Forum.all
+    @forums = current_user.forums
     respond_with(@forums)
   end
 
@@ -22,6 +22,7 @@ class ForumsController < ApplicationController
 
   def create
     @forum = Forum.new(forum_params)
+    @forum.user_id=current_user.id
     @forum.save
     respond_with(@forum)
   end
