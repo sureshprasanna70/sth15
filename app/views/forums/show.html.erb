@@ -15,12 +15,14 @@
 <%= @forum.tags %>
 </p>
 
-    <% if current_user %>
-      <%= rating_for @forum, "contents" %>
+<% if current_user %>
+      <%= rating_for @forum, "contents",stars:10 %>
       <br>
     <% end %>
 <br>
-
+  <%if @forum.user_id==current_user.id%>
+      <%= rating_for @forum, "contents",stars:10,imdb_avg: true %>
+    <%end%>
 
 <%= link_to 'Edit', edit_forum_path(@forum) %> |
 <%= link_to 'Back', forums_path %>
