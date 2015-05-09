@@ -11,20 +11,7 @@
   <div class="field">
     <%= f.text_field :name,:autofocus=>true,:class=>"form-control input-md",:placeholder=>"Your name" %><br>
   </div>
-  <div class="field">
-    <%= f.text_field :college,:class=>"form-control input-md" ,:placeholder=>"College" %><br>
-  </div>
-  <div class="field">
-    <%= f.text_field :department ,:class=>"form-control input-md" ,:placeholder=>"Department" %><br>
-  </div>
-  <div class="field">
-    <%= f.text_field :phone ,:class=>"form-control input-md" ,:placeholder=>"Phone" %><br>
-  </div>
 
-  <div class="field">
-      <%= f.select :year,options_for_select(["1","2","3","4","5"]),{},:class=>"form-control input-md" ,:placeholder=>"Year" %><br>
-
-  </div>
 
   <div class="field">
     <%= f.email_field :email,:class=>"form-control input-md" ,:placeholder=>"Your email id" %><br>

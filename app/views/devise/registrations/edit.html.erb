@@ -5,7 +5,6 @@
   </div>
   <div class="col-md-6 pull-right">
 
-    <h3>Your V! id is <b><%="V"+resource.id.to_s.rjust(5,"0")%></b></h3>
   </div>
 </div>
 <br>
@@ -13,42 +12,27 @@
   
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
-  <div class="col-md-6">
   <div class="field">
-    <%= f.text_field :name,:placeholder=>"Name",:class=>"form-control input-md"%>
-  </div><br/>
-   <div class="field">
-    <%= f.text_field :phone,:placeholder=>"Phone",:class=>"form-control input-md"%>
+    <%= f.text_field :name,:placeholder=>"Name",:class=>""%>
   </div><br/>
   <div class="field">
-    <%= f.text_field :college,:placeholder=>"college",:class=>"form-control input-md"%>
-  </div><br/>
-  <div class="field">
-    <%= f.text_field :department,:placeholder=>"Department",:class=>"form-control input-md"%>
-  </div><br/>
-  <div class="field">
-    <%= f.text_field :year,:placeholder=>"Year",:class=>"form-control input-md" %>
+    <%= f.text_field :year,:placeholder=>"Year",:class=>"" %>
   </div>
 </div>
-<div class="col-md-6">
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
+<br>
   <div class="field">
     
-    <%= f.password_field :password, autocomplete: "off",:placeholder=>"password (leave blank if you don't want to change it)",:class=>"form-control input-md" %>
+    <%= f.password_field :password, autocomplete: "off",:placeholder=>"password (leave blank if you don't want to change it)",:class=>"" %>
   </div><br/>
 
   <div class="field">
     
-    <%= f.password_field :password_confirmation, autocomplete: "off",:placeholder=>"confirm password",:class=>"form-control input-md"%>
+    <%= f.password_field :password_confirmation, autocomplete: "off",:placeholder=>"confirm password",:class=>""%>
   </div><br/>
 
   <div class="field">
     
-  <%= f.password_field :current_password, autocomplete: "off",:placeholder=>"current password (we need your current password to confirm your changes)",:class=>"form-control input-md" %>
+  <%= f.password_field :current_password, autocomplete: "off",:placeholder=>"current password (we need your current password to confirm your changes)",:class=>"" %>
 </div> 
 <br>
   <div class="actions">
