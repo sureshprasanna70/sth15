@@ -5,7 +5,6 @@ class ForumsController < ApplicationController
 
   def index
     @forums = current_user.forums
-    @forums_count=User.count
     respond_with(@forums)
   end
 
@@ -24,6 +23,8 @@ class ForumsController < ApplicationController
   def create
     @forum = Forum.new(forum_params)
     @forum.user_id=current_user.id
+    user_count=User.count
+    HardWorker.perform_async(@forum.id, user_count)
     @forum.save
     respond_with(@forum)
   end
