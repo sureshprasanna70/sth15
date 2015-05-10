@@ -2,7 +2,6 @@
   <% if @feedback.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@feedback.errors.count, "error") %> prohibited this feedback from being saved:</h2>
-
       <ul>
       <% @feedback.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -11,11 +10,11 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <p>
     <%= f.label :comment %><br>
     <%= f.text_area :comment %>
-  </div>
+  </p>
   <div class="actions">
-    <%= f.submit %>
+    <input type="submit" value="comment" class="btn btn-primary" %>
   </div>
 <% end %>

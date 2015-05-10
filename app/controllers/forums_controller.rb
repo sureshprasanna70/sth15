@@ -38,10 +38,10 @@ class ForumsController < ApplicationController
   def create
     @forum = Forum.new(forum_params)
     @forum.user_id=current_user.id
-    user_count=User.count
+    user_count=current_user.id
     @forum.save
     puts @forum.id
-    HardWorker.perform_async(1,@forum.id, user_count,current_user_id)
+    HardWorker.perform_async(1,@forum.id, user_count,current_user.id)
     respond_with(@forum)
   end
 

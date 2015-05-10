@@ -15,16 +15,20 @@
       <section class='feedback'>
         <div class='starRatings'>
           <span class='text-success'>Rating</span>
-   
-          <%= rating_for_user forum,current_user, "contents",imdb_avg:true,stars:5,half_show: true%>
+             <%= rating_for forum, "contents",stars:5,half_show: true%>
         </div>
-        <%=link_to "feedback",forum_feedback_new_path(forum),:remote=>true%>
+        <%=link_to "feedback",forum_feedback_new_path(forum),:remote=>true,:class=>"btn btn-small btn-primary"%><br>
         <div class="modal fade" id="feedback_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
-        <div class="form-group feedback" id="feedback">
 
-        </div>
-      </div>
+              <div class="modal-content">
+                <div class="modal-header">Your feedback</div>
+                 <div class="modal-body">
+              <div class="form-group feedback" id="feedback">
+              </div>
+            </div>
+            </div>
+          </div>
     </div>
       </div>
       </section>

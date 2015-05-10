@@ -1,4 +1,7 @@
+<div class="container postEntry ">
+
 <%= form_for(@forum) do |f| %>
+<div class="form-group">
   <% if @forum.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@forum.errors.count, "error") %> prohibited this forum from being saved:</h2>
@@ -12,17 +15,18 @@
   <% end %>
   <div class="field">
     <%= f.label :title %><br>
-    <%= f.text_area :title %>
+    <%= f.text_field :title,:class=>"form-control" %>
   </div>
   <div class="field">
     <%= f.label :content %><br>
-    <%= f.text_area :content %>
+    <%= f.text_area :content,:class=>"form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :tags %><br>
-    <%= f.text_area :tags %>
-  </div>
+
+  <br>
   <div class="actions">
-    <%= f.submit %>
+    <input type="submit" value="Post" class="btn btn-default btn-lg">
   </div>
+</div>
 <% end %>
+<%= link_to 'Back', forums_path %>
+</div>

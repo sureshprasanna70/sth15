@@ -6,6 +6,7 @@ class HardWorker
       puts forumid
       puts spreadcount
       postid=forumid
+      user_id=user_id
       if spreadcount<100
           start_limit=rand(100)
       elsif spreadcount>100 and spreadcount<1000
@@ -13,10 +14,9 @@ class HardWorker
       end
       redis_key="user_id_"+postid.to_s
       rand_ids=(0..spreadcount).to_a.shuffle
-      rand_ids=rand_ids-user_id
       existing_keys=$redis.smembers(redis_key)
       prop_ids=rand_ids-existing_keys
-      prop_id_twenty=prop_ids[0..20]
+      prop_id_twenty=prop_ids[0..2]
       puts prop_id_twenty 
       prop_id_twenty.each do |ind_keys|
         $redis.sadd(redis_key,ind_keys)
