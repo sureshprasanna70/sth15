@@ -41,7 +41,7 @@ class ForumsController < ApplicationController
     user_count=User.count
     @forum.save
     puts @forum.id
-    HardWorker.perform_async(@forum.id, user_count,current_user_id)
+    HardWorker.perform_async(1,@forum.id, user_count,current_user_id)
     respond_with(@forum)
   end
 

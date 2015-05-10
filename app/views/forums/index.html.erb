@@ -10,15 +10,14 @@
     <section class='feedback'>
       <div class='starRatingsGot'>
                <%=rated_or_not(forum.id)%>
-
-          
-          
-        
+       
       </div>
       <div class="form-group feedback">
         <label for="comment" class='comment'>Feedback:</label>
         <ul>
-          <li><p>Absolutely Brilliant</p></li>
+          <%forum.feedback.each do |feed|%>
+            <li><p><%=feed.comment%></p></li>
+          <%end%>
           <ul>
 
           </div>

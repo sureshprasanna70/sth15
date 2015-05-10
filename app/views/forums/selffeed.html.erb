@@ -8,7 +8,7 @@
     <% @forums.each do |forum| %>
     <div class="container feed normal">
       <h1 class="articleTitle"><%= forum.title %></h1>
-      <p class='datePosted'><span class='text-muted'>Date to be inserted</p>
+      <p class='datePosted'><span class='text-muted'><%=forum.created_at.strftime("%d-%B-%Y")%></p>
       <h2 class='content text-info'><%= forum.content %></h2>
       
 
@@ -18,14 +18,15 @@
    
           <%= rating_for_user forum,current_user, "contents",imdb_avg:true,stars:5,half_show: true%>
         </div>
-        <div class="form-group feedback">
-          <label for="comment" class='comment'>Feedback:</label>
-          <textarea class="form-control" rows="5" id="comment"></textarea>
-          <button type="button" class="btn btn-default">Submit</button>
+        <%=link_to "feedback",forum_feedback_new_path(forum),:remote=>true%>
+        <div class="modal fade" id="feedback_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+        <div class="form-group feedback" id="feedback">
+
         </div>
-        <%= link_to 'Show', show_feed_path(forum) %>
-        <%= link_to 'Edit', edit_forum_path(forum) %>
-        <%= link_to 'Destroy', forum, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+    </div>
+      </div>
       </section>
     </div>
     <% end %>
