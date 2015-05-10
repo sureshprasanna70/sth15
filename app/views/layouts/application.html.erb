@@ -43,7 +43,7 @@
         </span></h1>
         <p style="position: relative;top: .7em;right: 2em;">
           <%if user_signed_in?%>
-          
+
           <%= link_to('Logout', destroy_user_session_path, :method => :delete,:class=>"btn btn-danger pull-right") %>  
           <%end%>
 
@@ -87,8 +87,43 @@
     </div>
 
     <footer>
+    <r
+    <div class="row">
+        <div class="col-md-4">
+         <%=gravatar_image_tag("linkinnation1792@gmail.com", :alt =>"Harish Ramani",:class=>"img-rounded")%><br>
+         <a href="https://www.twitter.com/linkinnation" target="_blank">
+           @linkinnation
+       </a><br>
+       A TCS Employee and a former Instrumentation And Control Engineer
+   </div>
 
-    </footer>
+   <div class="col-md-4">
+     <%=gravatar_image_tag("raki.kb91@gmail.com", :alt =>"Harish Ramani",:class=>"img-rounded")%><br>
+     <a href="https://twitter.com/Rajki91" target="_blank">
+       @Rajki91
+
+   </a><br>
+   TCS Employee with a fantastic UI and UX skills wanting to build great apps
+
+</div>
+<div class="col-md-4">
+    <%=gravatar_image_tag("sureshprasanna70@gmail.com", :alt =>"Harish Ramani",:class=>"img-rounded")%><br>
+    <a href="https://www.twitter.com/cegsuresh" target="_blank">
+        @cegsuresh</a><br>
+        Student of College Of Engineering, Guindy. An RoR enthusiast
+
+    </div>
+</div>
+<br><br>
+<div class="row">
+    <div class="col-md-12">
+        <img src="/assets/savethehacker.png" width="10%" height="auto" class="sth"><br>
+        <a href="https://www.twitter.com/savethehacker" target="_blank">@savethehacker</a>
+        <br>
+        Hackathon courtesy:<br>
+    </div>
+</div>
+</footer>
 
   </div> 
 </body>

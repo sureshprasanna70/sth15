@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,33 +10,33 @@
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
       <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js" type="text/javascript"></script>
-    <![endif]-->
+      <![endif]-->
 
-    <%= stylesheet_link_tag "application", :media => "all" %>
+      <%= stylesheet_link_tag "application", :media => "all" %>
 
-    <!-- For third-generation iPad with high-resolution Retina display: -->
-    <!-- Size should be 144 x 144 pixels -->
-    <%= favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144' %>
+      <!-- For third-generation iPad with high-resolution Retina display: -->
+      <!-- Size should be 144 x 144 pixels -->
+      <%= favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144' %>
 
-    <!-- For iPhone with high-resolution Retina display: -->
-    <!-- Size should be 114 x 114 pixels -->
-    <%= favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114' %>
+      <!-- For iPhone with high-resolution Retina display: -->
+      <!-- Size should be 114 x 114 pixels -->
+      <%= favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114' %>
 
-    <!-- For first- and second-generation iPad: -->
-    <!-- Size should be 72 x 72 pixels -->
-    <%= favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72' %>
+      <!-- For first- and second-generation iPad: -->
+      <!-- Size should be 72 x 72 pixels -->
+      <%= favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72' %>
 
-    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
-    <!-- Size should be 57 x 57 pixels -->
-    <%= favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>
+      <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+      <!-- Size should be 57 x 57 pixels -->
+      <%= favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>
 
-    <!-- For all other devices -->
-    <!-- Size should be 32 x 32 pixels -->
-    <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
+      <!-- For all other devices -->
+      <!-- Size should be 32 x 32 pixels -->
+      <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
 
-    <%= javascript_include_tag "application" %>
-</head>
-<body>
+      <%= javascript_include_tag "application" %>
+  </head>
+  <body>
 
 
 
@@ -49,60 +49,73 @@
       <section class='container jumbo'>
 
 
-            <section class='brandDescription'>
- 
-
-                <h1>Welcome to AnonRatr</h1>
-                
-                <p>A platform to post content without being judged upon<br/>Hone your skills by getting valuable feedback</p>
+        <section class='brandDescription'>
 
 
-            </section>
+            <h1>Welcome to AnonRatr</h1>
+
+            <p>A platform to post content without being judged upon<br/>Hone your skills by getting valuable feedback</p>
 
 
-            
-         <section class='loginSlug' id='loginSlug'>       
-                
-                    <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
-                    <a class="hiddenanchor" id="toregister"></a>
-                    <a class="hiddenanchor" id="tologin"></a>
-                    <div id="wrapper">
-                        
-                          <%=yield%>
-                            
-                        </div>
-
-                                    
-                    </div>
-                
-            </section>        
-
-      </section>
+        </section>
 
 
 
+        <section class='loginSlug' id='loginSlug'>       
+
+            <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
+            <a class="hiddenanchor" id="toregister"></a>
+            <a class="hiddenanchor" id="tologin"></a>
+            <div id="wrapper">
+
+              <%=yield%>
+
+          </div>
 
 
+      </div>
 
+  </section>        
 
+</section>
 
+<footer>
+    <r
+    <div class="row">
+        <div class="col-md-4">
+         <%=gravatar_image_tag("linkinnation1792@gmail.com", :alt =>"Harish Ramani",:class=>"img-rounded")%><br>
+         <a href="https://www.twitter.com/linkinnation" target="_blank">
+           @linkinnation
+       </a><br>
+       A TCS Employee and a former Instrumentation And Control Engineer
+   </div>
 
+   <div class="col-md-4">
+     <%=gravatar_image_tag("raki.kb91@gmail.com", :alt =>"Harish Ramani",:class=>"img-rounded")%><br>
+     <a href="https://twitter.com/Rajki91" target="_blank">
+       @Rajki91
 
-        
+   </a><br>
+   TCS Employee with a fantastic UI and UX skills wanting to build great apps
 
+</div>
+<div class="col-md-4">
+    <%=gravatar_image_tag("sureshprasanna70@gmail.com", :alt =>"Harish Ramani",:class=>"img-rounded")%><br>
+    <a href="https://www.twitter.com/cegsuresh" target="_blank">
+        @cegsuresh</a><br>
+        Student of College Of Engineering, Guindy. An RoR enthusiast
 
-
-
-
-
-
-
-      
-
-  
-
-
-
-
+    </div>
+</div>
+<br><br>
+<div class="row">
+    <div class="col-md-12">
+        <img src="/assets/savethehacker.png" width="10%" height="auto" class="sth"><br>
+        <a href="https://www.twitter.com/savethehacker" target="_blank">@savethehacker</a>
+        <br>
+        Hackathon courtesy:<br>
+    </div>
+</div>
+</footer>
 </body>
 </html>
