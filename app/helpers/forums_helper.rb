@@ -4,7 +4,7 @@ module ForumsHelper
 		if not items.nil? and items.stars
 				return items.stars.to_s
 			else
-				return "not rated"
+				return "not_rated"
 			end
 	
 

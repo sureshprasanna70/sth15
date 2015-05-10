@@ -37,33 +37,59 @@
       <%= javascript_include_tag "application" %>
     </head>
     <body>
-      <header class='row main-header'>
-        <h1 class=''><span class='logo'>AR</span><span class='brandName'>AnonRatr</span></h1>
+      <header  class='row main-header'>
+        <h1 style='float:left'><span class='logo'>AR</span><span class='brandName'>AnonRatr 
+
+        </span></h1>
+        <p style="position: relative;top: .7em;right: 2em;">
+          <%if user_signed_in?%>
+          
+          <%= link_to('Logout', destroy_user_session_path, :method => :delete,:class=>"btn btn-danger pull-right") %>  
+          <%end%>
+
+          <span class="welcome_text pull-right">Welcome, <%=current_user.name%></span> 
+<span class="pull-right"><%=gravatar_image_tag(current_user.email, :alt =>current_user.name,:class=>"img-rounded")%></span>
+        </p>
+
+
+
       </header>
       <ul class="nav nav-pills nav-justified">
-        <li><a href="/feed"><span class="glyphicon glyphicon-th-list"></span> News Feed</a></li>
-        <li><a href="/forums"><span class="glyphicon glyphicon-user"></span> My Posts</a></li>
-        <li><%=link_to new_forum_path do%>
 
+        <%if request.fullpath=="/feed"%>
+        <li class="active"><a href="/feed"><span class="glyphicon glyphicon-th-list"></span> News Feed</a></li>
+        <%else%>
+        <li><a href="/feed"><span class="glyphicon glyphicon-th-list"></span> News Feed</a></li>
+        <%end%>
+        <%if request.fullpath=="/forums"%>
+        <li class="active"><a href="/forums"><span class="glyphicon glyphicon-user"></span> My Posts</a></li>
+        <%else%>
+        <li><a href="/forums"><span class="glyphicon glyphicon-user"></span> My Posts</a></li>
+        <%end%>
+        <%if request.fullpath=="/forums/new"%>
+        <li class="active"><%=link_to new_forum_path do%>
           <span class="glyphicon glyphicon-pencil"></span> New Post
           <%end%>
-        </li>
-        
-      </ul>
-      <%= bootstrap_flash %>
-      <%if user_signed_in?%>
-      <%= link_to('Logout', destroy_user_session_path, :method => :delete,:class=>"btn btn-danger pull-right") %>      
-      <%end%>
-      <br>
-      <%= yield %>
+          <%else%>
+          <li><%=link_to new_forum_path do%>
+            <span class="glyphicon glyphicon-pencil"></span> New Post
+            <%end%>
+            <%end%>
+          </li>
+
+        </ul>
+        <%= bootstrap_flash %>
+
+        <br>
+        <%= yield %>
+      </div>
+
     </div>
-    
-  </div>
 
-  <footer>
-    
-  </footer>
+    <footer>
 
-</div> 
+    </footer>
+
+  </div> 
 </body>
 

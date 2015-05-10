@@ -7,6 +7,10 @@
       <%= devise_error_messages! %>
     </div>
     <%end%>
+      <p> 
+    <label for="name" class="youmail" data-icon="u" > Your name</label>
+    <%= f.email_field :email,:placeholder=>"Your name" %>
+  </p>
   <p> 
     <label for="emailsignup" class="youmail" data-icon="e" > Your email</label>
     <%= f.email_field :email,:placeholder=>"Your email id" %>

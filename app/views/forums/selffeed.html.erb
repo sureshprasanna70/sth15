@@ -17,7 +17,10 @@
           <span class='text-success'>Rating</span>
              <%= rating_for forum, "contents",stars:5,half_show: true%>
         </div>
-        <%=link_to "feedback",forum_feedback_new_path(forum),:remote=>true,:class=>"btn btn-small btn-primary"%><br>
+        <p>
+        <%=link_to "Feedback",forum_feedback_new_path(forum),:remote=>true,:class=>"btn btn-small btn-primary"%>
+        
+      </p>
         <div class="modal fade" id="feedback_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
 

@@ -50,5 +50,8 @@ $(document).ready(function(){
 
 	})
 
+var starCount=Number($('.starRatingsGot').find("div:not(.not_rated)").attr('class').split('.')[0]);
+	for(var i=0;i<2;i++){$('.starRatingsGot').find("div:not(.not_rated)").append('<img src="/assets/star-on.png"></img>	');}
+for(var i=0;i<=4;i++){$('.starRatingsGot').find("div.not_rated").append('<img class="spaced" src="/assets/star-off.png"></img>');}
 });
 

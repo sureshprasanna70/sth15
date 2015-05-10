@@ -2,15 +2,15 @@
 
 
   <% @forums.each do |forum| %>
-  
+
   <div class="container feed normal">
 
     <h1 class="articleTitle"><%= forum.title %></h1>
-    <p class='datePosted'><span class='text-muted'></span></p>
+    <p class='datePosted'><span class='text-muted'></span><%=forum.created_at.strftime("%d-%B-%Y")%></p>
     <h2 class='content text-info'><%= forum.content %></h2>
     <section class='feedback'>
       <div class='starRatingsGot'>
-               <%=rated_or_not(forum.id)%>
+               <div class="<%=rated_or_not(forum.id)%>"></div>
        
       </div>
       <div class="form-group feedback">
