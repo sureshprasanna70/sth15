@@ -5,6 +5,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'minitest'
   gem 'thor'
+  gem 'better_errors'
 end
 group :production, :mysql do
   gem 'mysql2'
@@ -26,3 +27,6 @@ gem 'twitter-bootstrap-rails', '~> 3.2.0'
 gem 'redis', '2.1.1'
 gem 'composite_primary_keys','~> 7.0'
 gem 'gravatar_image_tag'
+gem 'omniauth'
+gem "omniauth-google-oauth2"
+gem 'omniauth-digitalocean'

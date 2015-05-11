@@ -1,11 +1,11 @@
 <br>
-<%- if controller_name != 'sessions' %>
+
 <p class="change_link">  
+<%- if controller_name != 'sessions' %>
                   Already a member ?
                   
                 
   <%= link_to "Log in", new_session_path(resource_name),:class=>"to_register"%>
-</p>
 <% end -%>
 <br>
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
@@ -25,6 +25,8 @@
 <% end -%>
 <%- if devise_mapping.omniauthable? %>
   <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= link_to "Sign in with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider) %><br />
+    <%= link_to "Sign in with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider),:class=>"to_register" %><br />
   <% end -%>
 <% end -%>
+`
+</p>
