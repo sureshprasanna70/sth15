@@ -42,7 +42,7 @@
 
       <header class='row main-header'>
 
-          <h1 class=''><span class='logo'>AR</span><span class='brandName'>AnonRatr</span></h1>
+        <h1 class=''><span class='logo'>AR</span><span class='brandName'><a href="/">AnonRatr</a></span></h1>
 
       </header>
 
@@ -66,6 +66,8 @@
             <!-- hidden anchor to stop jump http://www.css3create.com/Astuce-Empecher-le-scroll-avec-l-utilisation-de-target#wrap4  -->
             <a class="hiddenanchor" id="toregister"></a>
             <a class="hiddenanchor" id="tologin"></a>
+            <%= bootstrap_flash %>
+
             <div id="wrapper">
 
               <%=yield%>
@@ -80,7 +82,6 @@
 </section>
 
 <footer>
-    <r
     <div class="row">
         <div class="col-md-4">
          <%=gravatar_image_tag("linkinnation1792@gmail.com", :alt =>"Harish Ramani",:class=>"img-rounded")%><br>

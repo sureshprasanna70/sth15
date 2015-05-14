@@ -2620,3 +2620,7 @@ text-decoration: underline;
   background-color:#E2E0D7;
   padding: 5px;
 }
+.brandName a,.brandName a:hover{
+  color:white;
+  text-decoration:none
+}
